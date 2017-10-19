@@ -1,0 +1,141 @@
+[debug] [2017-10-19T03:40:03.128Z] ----------------------------------------------------------------------
+[debug] [2017-10-19T03:40:03.130Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2017-10-19T03:40:03.131Z] CLI Version:   3.13.1
+[debug] [2017-10-19T03:40:03.131Z] Platform:      linux
+[debug] [2017-10-19T03:40:03.131Z] Node Version:  v6.11.4
+[debug] [2017-10-19T03:40:03.131Z] Time:          Thu Oct 19 2017 09:10:03 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:03.131Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-19T03:40:03.143Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-19T03:40:03.144Z] > authorizing via signed-in user
+[debug] [2017-10-19T03:40:03.146Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/awesome-feda1  
+ Thu Oct 19 2017 09:10:03 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:04.817Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-19T03:40:04.820Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/awesome-feda1/tokens  
+ Thu Oct 19 2017 09:10:04 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:05.976Z] <<< HTTP RESPONSE 200
+[info] 2
+[info] 
+[info] === Deploying to 'awesome-feda1'...
+[info] 
+[info] i  deploying database, functions
+[info] i  database: checking rules syntax...
+[debug] [2017-10-19T03:40:08.887Z] >>> HTTP REQUEST PUT https://awesome-feda1.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Thu Oct 19 2017 09:10:08 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:10.269Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax is valid
+[debug] [2017-10-19T03:40:10.271Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "firebase-admin": "~5.4.0",
+    "firebase-functions": "^0.7.0",
+    "request-promise": "^2.0.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-10-19T03:40:10.273Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/awesome-feda1?view=CONSUMER_VIEW  
+ Thu Oct 19 2017 09:10:10 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:10.273Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/awesome-feda1?view=CONSUMER_VIEW  
+ Thu Oct 19 2017 09:10:10 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:12.354Z] <<< HTTP RESPONSE 200
+[info] ✔  runtimeconfig: all necessary APIs are enabled
+[debug] [2017-10-19T03:40:12.463Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2017-10-19T03:40:12.464Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/awesome-feda1  
+ Thu Oct 19 2017 09:10:12 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:12.465Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/awesome-feda1/apiKeys  
+ Thu Oct 19 2017 09:10:12 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:14.824Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-19T03:40:14.827Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2017-10-19T03:40:15.821Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/awesome-feda1/configs  
+ Thu Oct 19 2017 09:10:15 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:16.744Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (1.48 KB) for uploading
+[debug] [2017-10-19T03:40:19.198Z] >>> HTTP REQUEST GET https://www.googleapis.com/storage/v1/b/staging.awesome-feda1.appspot.com  
+ Thu Oct 19 2017 09:10:19 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:19.903Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-19T03:40:19.904Z] >>> HTTP REQUEST POST https://www.googleapis.com/upload/storage/v1/b/staging.awesome-feda1.appspot.com/o?uploadType=media&name=firebase-functions-source ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 1516,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     defaultEncoding: 'utf8',
+     ranOut: false,
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/tmp/firebase-functions-3290zH0sHo42epVb.zip',
+  fd: 15,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 1516 } 
+ Thu Oct 19 2017 09:10:19 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:20.650Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  database: releasing rules...
+[debug] [2017-10-19T03:40:20.653Z] >>> HTTP REQUEST PUT https://awesome-feda1.firebaseio.com/.settings/rules.json {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Thu Oct 19 2017 09:10:20 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:23.002Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules released successfully
+[info] i  starting release process (may take several minutes)...
+[debug] [2017-10-19T03:40:23.004Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/projects/awesome-feda1/locations/us-central1/functions  
+ Thu Oct 19 2017 09:10:23 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:23.945Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function sendReply...
+[debug] [2017-10-19T03:40:23.949Z] Trigger is: 
+[debug] [2017-10-19T03:40:23.951Z] >>> HTTP REQUEST PUT https://cloudfunctions.googleapis.com/v1beta2/projects/awesome-feda1/locations/us-central1/functions/sendReply { sourceArchiveUrl: 'gs://staging.awesome-feda1.appspot.com/firebase-functions-source',
+  name: 'projects/awesome-feda1/locations/us-central1/functions/sendReply',
+  entryPoint: 'sendReply',
+  timeout: '60s',
+  availableMemoryMb: 256,
+  eventTrigger: 
+   { resource: 'projects/_/instances/awesome-feda1/refs/chat/{chatID}',
+     eventType: 'providers/google.firebase.database/eventTypes/ref.write' } } 
+ Thu Oct 19 2017 09:10:23 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:24.779Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-19T03:40:24.784Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/projects/awesome-feda1/locations/us-central1/functions  
+ Thu Oct 19 2017 09:10:24 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:24.785Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1beta2/operations/YXdlc29tZS1mZWRhMS91cy1jZW50cmFsMS9zZW5kUmVwbHkvNWkydGhJa2hSSm8  
+ Thu Oct 19 2017 09:10:24 GMT+0530 (IST)
+[debug] [2017-10-19T03:40:25.642Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-19T03:40:25.646Z] [functions] operation poll: sendReply: update operations/YXdlc29tZS1mZWRhMS91cy1jZW50cmFsMS9zZW5kUmVwbHkvNWkydGhJa2hSSm8 is not done.
+[debug] [2017-10-19T03:40:25.799Z] <<< HTTP RESPONSE 200
